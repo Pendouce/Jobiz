@@ -5,7 +5,7 @@ namespace App\Controller;
 
 class PageController extends Controller
 {
-  // Affiecher la page d'acceuil
+  // Afficher la page d'acceuil
 
   public function home(): void
   {
