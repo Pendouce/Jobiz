@@ -3,9 +3,12 @@
 
 namespace App\Routing;
 
+use App\Controller\ErrorController;
+use Exception;
+
 class Router
 {
-  private $routes;
+  private array $routes;
   public function __construct() 
   {
     $this->routes = require_once APP_ROOT."/config/routes.php";
@@ -13,15 +16,31 @@ class Router
 
   public function handleRequest(string $uri)
   {
-    $path = $this->normalizePath($uri);
-    $route = $this->routes[$path];
+    try{
+      // Je verifie si la route existe
+        $path = $this->normalizePath($uri);
+        if(!isset($this->routes[$path])){
+          throw new Exception("La route n'existe pas");
+        }
+        $route = $this->routes[$path];
 
-    $controllerPath = $route["controller"];
-    $action = $route["action"];
+        $controllerPath = $route["controller"];
+        $action = $route["action"];
 
-    $controller = new $controllerPath();
+        if(!class_exists($controllerPath)){
+          throw new Exception("La classe n'existe pas");
+        }
+        $controller = new $controllerPath();
+        if(!method_exists($controller, $action)){
+          throw new Exception("L'action n'existe pas");
 
-    $controller->$action();
+        }
+        $controller->$action();
+      }catch(Exception $e){
+        $errorController = new ErrorController();
+        $errorController->show($e->getMessage());
+      }
+    
     //var_dump($controller);
   }
 
