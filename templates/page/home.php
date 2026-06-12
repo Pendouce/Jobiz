@@ -1,8 +1,6 @@
   <?php require_once APP_ROOT . "/templates/header.php"; ?>
 
 
-  <h1>Acceuil</h1>
-
   <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
     <div class="flex flex-col text-center w-full mb-20">
@@ -51,5 +49,7 @@
     <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
   </div>
 </section>
+
+<!-- <?php foreach $category->getName(); ?> -->
 
   <?php require_once APP_ROOT . "/templates/footer.php"; ?>
