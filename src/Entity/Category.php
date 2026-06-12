@@ -3,7 +3,7 @@
 
 namespace App\Entity;
 
-class Category
+class Category extends Entity
 {
   protected ?int $id = null;
   protected ?string $name = null;
@@ -44,4 +44,5 @@ class Category
 
     return $this;
   }
+
 }

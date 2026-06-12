@@ -1,4 +1,4 @@
-  <?php require_once APP_ROOT . "/templates/header.php"; ?>
+  <?php require_once APP_ROOT . "/templates/header.php";?>
 
 
   <section class="text-gray-600 body-font">
@@ -48,8 +48,27 @@
     </div>
     <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
   </div>
+
+  <div class="container px-5 py-8 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+
+    <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">CATEGORIES</h2>
+        <nav class="list-none mb-10">
+            <?php /** @var App\Entity\Category $categories */ ?>
+          <?php foreach($categories as $category): ?>
+            <?php /** @var App\Entity\Category $category */ ?>
+          <li>
+            <a class="text-gray-600 hover:text-gray-800"><?= $category->getName() ?></a>
+          </li>
+          <?php endforeach;?>
+          
+        </nav>
+      </div>
+      
+  </div>
 </section>
 
-<!-- <?php foreach $category->getName(); ?> -->
+ <?php //foreach $category->getName(); ?> 
 
   <?php require_once APP_ROOT . "/templates/footer.php"; ?>
