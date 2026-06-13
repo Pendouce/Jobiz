@@ -1,3 +1,5 @@
+<?php use App\Routing\Router;?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +19,8 @@
       <span class="ml-3 text-xl">Tailblocks</span>
     </a>
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <a href="/" class="mr-5 hover:text-gray-900">Acceuil</a>
-      <a href="/about/" class="mr-5 hover:text-gray-900">A propos</a>
+      <a href="/" class="mr-5 hover:text-gray-900 <?= Router::isActiveRoute('/') ? "text-indigo-500" : "" ; ?>" >Acceuil</a>
+      <a href="/about/" class="mr-5 hover:text-gray-900 <?= Router::isActiveRoute('/about/') ? "text-indigo-500" : "" ; ?>">A propos</a>
       <a class="mr-5 hover:text-gray-900">Third Link</a>
       <a class="mr-5 hover:text-gray-900">Fourth Link</a>
     </nav>

@@ -18,7 +18,7 @@ class PageController extends Controller
     $categories = $categoryRepository->findAll();
 
     //var_dump($category);
-    var_dump($categories);
+    //var_dump($categories);
     $this->render("page/home", [
       "categories" => $categories,
     ]);
@@ -28,7 +28,5 @@ class PageController extends Controller
   {
   $this->render("page/about");
   }
-
-
 
 }

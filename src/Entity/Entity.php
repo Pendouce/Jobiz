@@ -13,8 +13,8 @@ class Entity
   }
 
     /* 
-    Je parccour le tableau de donnée recupéré de la bdd
-    tableau associatif ave cle => valeur
+    Je parcour le tableau de donnée recupéré de la bdd
+    tableau associatif avec cle => valeur
     Pour chacun d'entre eux je construit la methode a appelée (set)
     suivis du nom du champs (avec la premiere lettre en MAJ)
     J'appelle le setteur en lui passant la valeur
