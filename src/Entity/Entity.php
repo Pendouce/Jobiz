@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use DateTimeImmutable;
+
 class Entity
 {
   public static function createAndHydrate(array $data):static
@@ -45,6 +47,9 @@ class Entity
       //var_dump($methodeName);
 
       if(method_exists($this, $methodeName)){
+        if($key === 'created_at'){
+          $value = new DateTimeImmutable($value);
+        }
         $this->{$methodeName}($value);
       }
       

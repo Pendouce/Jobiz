@@ -21,7 +21,7 @@
     <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       <a href="/" class="mr-5 hover:text-gray-900 <?= Router::isActiveRoute('/') ? "text-indigo-500" : "" ; ?>" >Acceuil</a>
       <a href="/about/" class="mr-5 hover:text-gray-900 <?= Router::isActiveRoute('/about/') ? "text-indigo-500" : "" ; ?>">A propos</a>
-      <a href="/jobs/" class="mr-5 hover:text-gray-900 <?= Router::isActiveRoute('/jobs/') ? "text-indigo-500" : "" ; ?>">Poste</a>
+      <a href="/jobs/" class="mr-5 hover:text-gray-900 <?= Router::isActiveRoute('/jobs/') ? "text-indigo-500" : "" ; ?>">Les offres</a>
 
       <a class="mr-5 hover:text-gray-900">Fourth Link</a>
     </nav>
